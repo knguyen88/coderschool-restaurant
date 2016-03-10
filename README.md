@@ -6,7 +6,7 @@ Submitted by: **Kha Nguyen**
 
 Time spent: **XX** hours spent in total
 
-URL: **heroku-app-url**
+URL: **https://powerful-chamber-76923.herokuapp.com**
 
 ## User Stories
 
