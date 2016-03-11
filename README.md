@@ -4,7 +4,7 @@
 
 Submitted by: **Kha Nguyen**
 
-Time spent: **XX** hours spent in total
+Time spent: **2** hours spent in total
 
 URL: **https://powerful-chamber-76923.herokuapp.com**
 
@@ -12,16 +12,16 @@ URL: **https://powerful-chamber-76923.herokuapp.com**
 
 ### Required:
 
-* [ ] User must be able to go two pages: Menu, and Contact Us.
-* [ ] User can see the address and phone number on the contact us page.
-* [ ] User can see a basic google map on the Contact Us page.
-* [ ] User can navigate to a menu page with four sections:
-  * [ ] Breakfast
-  * [ ] Lunch
-  * [ ] Dinner
-  * [ ] Drinks
-* [ ] User should see at least 5 food items in each section.
-* [ ] Each food item should have the following fields:
+* [x] User must be able to go two pages: Menu, and Contact Us.
+* [x] User can see the address and phone number on the contact us page.
+* [x] User can see a basic google map on the Contact Us page.
+* [x] User can navigate to a menu page with four sections:
+  * [x] Breakfast
+  * [x] Lunch
+  * [x] Dinner
+  * [x] Drinks
+* [x] User should see at least 5 food items in each section.
+* [x] Each food item should have the following fields:
   * Name (Canh Chua)
   * Description (Delicious fish soup)
   * Price (VND)

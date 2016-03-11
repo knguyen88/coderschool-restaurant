@@ -4,7 +4,10 @@ class MenuItemsController < ApplicationController
   # GET /menu_items
   # GET /menu_items.json
   def index
-    @menu_items = MenuItem.all
+    @breakfast_items = MenuItem.where(category: MenuItem.categories[:breakfast])
+    @lunch_items = MenuItem.where(category: MenuItem.categories[:lunch])
+    @dinner_items = MenuItem.where(category: MenuItem.categories[:dinner])
+    @drink_items = MenuItem.where(category: MenuItem.categories[:drink])
   end
 
   # GET /menu_items/1

@@ -9,6 +9,23 @@
 </head>
 <body>
 <div class="container">
+  <div class="jumbotron">
+    <h1 class="display-3">Welcome to the Heart Attack restaurant</h1>
+    <p class="lead">Our dishes are designed to give you heart attack as soon as possible.</p>
+    <hr class="m-y-2">
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </p>
+  </div>
+
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link active" href="<%= menu_items_path %>">Menu</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="<%= contact_us_path %>">Contact us</a>
+    </li>
+  </ul>
   <%= yield %>
 </div>
 </body>
