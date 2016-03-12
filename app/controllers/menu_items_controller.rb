@@ -4,6 +4,8 @@ class MenuItemsController < ApplicationController
   # GET /menu_items
   # GET /menu_items.json
   def index
+    session[:order_items] ||= {}
+
     sort = params[:sort] ? params[:sort] : 'name'
     order = params[:order] ? params[:order] : 'asc'
 

@@ -1,0 +1,30 @@
+<form method="post" class="form-inline">
+  <div class="row order-container">
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2>Order</h2>
+        </div>
+
+        <table class="table table-hover order">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% session[:order_items].values.each do |item| %>
+              <tr>
+                <td data-id="<%= item['id'] %>"><%= item['name'] %></td>
+                <td><%= item['price'] %></td>
+                <td><%= item['quantity'] %></td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</form>
