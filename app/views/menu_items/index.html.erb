@@ -1,3 +1,15 @@
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Category <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="<%= menu_items_path(category: MenuItem.categories[:breakfast]) %>">Breakfast</a></li>
+    <li><a href="<%= menu_items_path(category: MenuItem.categories[:lunch]) %>">Lunch</a></li>
+    <li><a href="<%= menu_items_path(category: MenuItem.categories[:dinner]) %>">Dinner</a></li>
+    <li><a href="<%= menu_items_path(category: MenuItem.categories[:drink]) %>">Drinks</a></li>
+  </ul>
+</div>
+
 <%= render partial: 'menu_items', locals: {items: @breakfast_items, category: 'Breakfast'} %>
 <%= render partial: 'menu_items', locals: {items: @lunch_items, category: 'Lunch'} %>
 <%= render partial: 'menu_items', locals: {items: @dinner_items, category: 'Dinner'} %>

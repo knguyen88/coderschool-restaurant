@@ -4,10 +4,22 @@ class MenuItemsController < ApplicationController
   # GET /menu_items
   # GET /menu_items.json
   def index
-    @breakfast_items = MenuItem.where(category: MenuItem.categories[:breakfast])
-    @lunch_items = MenuItem.where(category: MenuItem.categories[:lunch])
-    @dinner_items = MenuItem.where(category: MenuItem.categories[:dinner])
-    @drink_items = MenuItem.where(category: MenuItem.categories[:drink])
+    case params[:category].to_i
+      when MenuItem.categories[:breakfast]
+        @breakfast_items = MenuItem.where(category: MenuItem.categories[:breakfast])
+      when MenuItem.categories[:lunch]
+        @lunch_items = MenuItem.where(category: MenuItem.categories[:lunch])
+      when MenuItem.categories[:dinner]
+        @dinner_items = MenuItem.where(category: MenuItem.categories[:dinner])
+      when MenuItem.categories[:drink]
+        @drink_items = MenuItem.where(category: MenuItem.categories[:drink])
+      else
+        @breakfast_items = MenuItem.where(category: MenuItem.categories[:breakfast])
+        @lunch_items = MenuItem.where(category: MenuItem.categories[:lunch])
+        @dinner_items = MenuItem.where(category: MenuItem.categories[:dinner])
+        @drink_items = MenuItem.where(category: MenuItem.categories[:drink])
+    end
+
   end
 
   # GET /menu_items/1
