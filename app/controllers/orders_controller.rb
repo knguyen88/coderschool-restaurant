@@ -70,7 +70,7 @@ class OrdersController < ApplicationController
     else
       session['order_items'][@new_item['id']] = @new_item
     end
-    render '/orders/_add_item'
+    render '/orders/_add_item', layout: false
   end
 
   private
