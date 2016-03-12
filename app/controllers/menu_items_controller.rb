@@ -4,22 +4,24 @@ class MenuItemsController < ApplicationController
   # GET /menu_items
   # GET /menu_items.json
   def index
-    case params[:category].to_i
-      when MenuItem.categories[:breakfast]
-        @breakfast_items = MenuItem.where(category: MenuItem.categories[:breakfast])
-      when MenuItem.categories[:lunch]
-        @lunch_items = MenuItem.where(category: MenuItem.categories[:lunch])
-      when MenuItem.categories[:dinner]
-        @dinner_items = MenuItem.where(category: MenuItem.categories[:dinner])
-      when MenuItem.categories[:drink]
-        @drink_items = MenuItem.where(category: MenuItem.categories[:drink])
-      else
-        @breakfast_items = MenuItem.where(category: MenuItem.categories[:breakfast])
-        @lunch_items = MenuItem.where(category: MenuItem.categories[:lunch])
-        @dinner_items = MenuItem.where(category: MenuItem.categories[:dinner])
-        @drink_items = MenuItem.where(category: MenuItem.categories[:drink])
-    end
+    sort = params[:sort] ? params[:sort] : 'name'
+    order = params[:order] ? params[:order] : 'asc'
 
+    case params[:category]
+      when MenuItem.categories[:breakfast].to_s
+        @breakfast_items = build_query(params[:name], params[:category], sort, order)
+      when MenuItem.categories[:lunch].to_s
+        @lunch_items = build_query(params[:name], params[:category], sort, order)
+      when MenuItem.categories[:dinner].to_s
+        @dinner_items = build_query(params[:name], params[:category], sort, order)
+      when MenuItem.categories[:drink].to_s
+        @drink_items = build_query(params[:name], params[:category], sort, order)
+      else
+        @breakfast_items = build_query(params[:name], MenuItem.categories[:breakfast], sort, order)
+        @lunch_items = build_query(params[:name], MenuItem.categories[:lunch], sort, order)
+        @dinner_items = build_query(params[:name], MenuItem.categories[:dinner], sort, order)
+        @drink_items = build_query(params[:name], MenuItem.categories[:drink], sort, order)
+    end
   end
 
   # GET /menu_items/1
@@ -85,5 +87,14 @@ class MenuItemsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def menu_item_params
     params.fetch(:menu_item, {})
+  end
+
+  def build_query(name, category, sort, order)
+    query = MenuItem.where(category: category).order(sort => order)
+    if name
+      query.where('lower(name) LIKE ?', "%#{name.downcase}%")
+    else
+      query
+    end
   end
 end
