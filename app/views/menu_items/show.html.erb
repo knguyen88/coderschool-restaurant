@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_menu_item_path(@menu_item) %> |
-<%= link_to 'Back', menu_items_path %>
+<div class="thumbnail">
+  <img class="menu-item-picture" src="<%= @menu_item.image_url %>" alt="<%= @menu_item.name %>" />
+  <div class="caption">
+    <p><%= @menu_item.description %></p>
+  </div>
+</div>
