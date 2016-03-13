@@ -52,6 +52,14 @@
         <span><%= @order.created_at.strftime("%H:%M, %d-%m-%Y") %></span>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-3">
+        <span><strong>Coupon</strong></span>
+      </div>
+      <div class="col-md-6">
+        <span><%= @order.coupon %></span>
+      </div>
+    </div>
   </div>
 
   <table class="table table-hover">
@@ -73,6 +81,10 @@
     <tr>
       <td><strong>Delivery</strong></td>
       <td><%= @order.delivery %></td>
+    </tr>
+    <tr>
+      <td><strong>Discount</strong></td>
+      <td><%= @order.discount_amount %></td>
     </tr>
     <tr>
       <td><strong>Total</strong></td>
