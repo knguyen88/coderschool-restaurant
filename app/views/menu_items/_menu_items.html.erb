@@ -11,6 +11,7 @@
             <tr>
               <th>Name</th>
               <th>Price</th>
+              <th>View count</th>
             </tr>
             </thead>
             <tbody>
@@ -18,6 +19,7 @@
                 <tr>
                   <td class="item-name" data-id="<%= item.id %>"><%= item.name %></td>
                   <td><%= item.price %></td>
+                  <td class="current-view-count"><%= item.view_count %></td>
                 </tr>
             <% end %>
             </tbody>

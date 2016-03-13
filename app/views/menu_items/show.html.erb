@@ -2,6 +2,7 @@
   <img class="menu-item-picture" src="<%= @menu_item.image_url %>" alt="<%= @menu_item.name %>" />
   <div class="caption">
     <p><%= @menu_item.description %></p>
+    <p><strong>View counts: </strong><span id="new-view-count"><%= @menu_item.view_count %></span></p>
   </div>
   <button class="btn btn-primary add-item-to-order" data-id="<%= @menu_item.id %>">Order</button>
 </div>

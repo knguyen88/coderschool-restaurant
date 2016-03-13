@@ -29,6 +29,8 @@ class MenuItemsController < ApplicationController
   # GET /menu_items/1
   # GET /menu_items/1.json
   def show
+    @menu_item.view_count += 1
+    @menu_item.save
     render :layout => false
   end
 
