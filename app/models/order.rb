@@ -4,6 +4,8 @@ class Order < ActiveRecord::Base
 
   attr_accessor :total, :discount_amount
 
+  after_create :send_notification_to_user
+
   def total
     total = self.delivery + menu_items.inject(0) { |total, item| total + item.price }
     if discount
@@ -24,5 +26,9 @@ class Order < ActiveRecord::Base
   private
   def discount
     'coderschool' == coupon.downcase
+  end
+
+  def send_notification_to_user
+    OrderMailer.order_created(self).deliver_now unless self.email.empty?
   end
 end

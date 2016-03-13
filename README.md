@@ -4,7 +4,7 @@
 
 Submitted by: **Kha Nguyen**
 
-Time spent: **6** hours spent in total
+Time spent: **8** hours spent in total
 
 URL: **https://powerful-chamber-76923.herokuapp.com**
 
@@ -43,7 +43,7 @@ URL: **https://powerful-chamber-76923.herokuapp.com**
 * [ ] User can see reviews and an average review score.
 * [x] User can input "CODERSCHOOL" as a coupon code on the order page, which should give a 50% discount off of the order.
 * [x] User can order more than one dish at a time.
-* [ ] User receives an email upon placing an order.
+* [x] User receives an email upon placing an order.
 * [ ] The Restaurant (you) receives an email or SMS when a User places an order. Try Twilio if you’d like a SMS API. Use Promo Code CodeSchool15 for $30 free credit.
 
 The following **additional** features are implemented:
